@@ -8,6 +8,7 @@ content:
     type: collection
     path: _data/products
     format: yaml
+    extension: yml
     fields:
       - name: title
         label: Product Name
