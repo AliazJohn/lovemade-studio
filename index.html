@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +81,20 @@
         <section class="gallery-section">
             <h3 class="section-title">Our Creations</h3>
             <div class="product-grid" id="productGrid">
-                <!-- Products will be dynamically injected here by main.js -->
+                {% for item in site.data.products %}
+                  {% assign product = item[1] %}
+                  <div class="product-card">
+                      <div class="product-image-wrapper">
+                          <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image" loading="lazy">
+                      </div>
+                      <div class="product-details">
+                          <h3 class="product-title">{{ product.title }}</h3>
+                          <p class="product-desc">{{ product.description }}</p>
+                          <p class="product-price">{{ product.price }}</p>
+                          <button class="btn-purchase" data-title="{{ product.title }}">Purchase</button>
+                      </div>
+                  </div>
+                {% endfor %}
             </div>
         </section>
     </main>
@@ -110,7 +125,7 @@
         </div>
     </div>
 
-    <script src="js/products.js"></script>
+    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>

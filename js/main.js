@@ -13,27 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Phone number placeholder for WhatsApp. The user might change this later.
     const WA_NUMBER = ""; // Example format: "1234567890"
 
-    // Render products
-    if (typeof products !== 'undefined') {
-        products.forEach(product => {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            
-            card.innerHTML = `
-                <div class="product-image-wrapper">
-                    <img src="${product.image}" alt="${product.title}" class="product-image" loading="lazy">
-                </div>
-                <div class="product-details">
-                    <h3 class="product-title">${product.title}</h3>
-                    <p class="product-desc">${product.description}</p>
-                    <p class="product-price">${product.price}</p>
-                    <button class="btn-purchase" data-title="${product.title}">Purchase</button>
-                </div>
-            `;
-            
-            grid.appendChild(card);
-        });
-    }
+    // Products are now rendered directly by Jekyll in index.html
 
     // Modal logic
     function openModal(productTitle) {

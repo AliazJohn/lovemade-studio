@@ -6,7 +6,8 @@ content:
   - name: products
     label: Products
     type: collection
-    path: data/products.json
+    path: _data/products
+    format: yaml
     fields:
       - name: title
         label: Product Name
