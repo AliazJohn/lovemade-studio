@@ -1,0 +1,27 @@
+media:
+  input: assets
+  output: assets
+
+content:
+  - name: products
+    label: Products
+    type: collection
+    path: data/products.json
+    fields:
+      - name: title
+        label: Product Name
+        type: string
+        required: true
+      - name: price
+        label: Price Text
+        type: string
+        required: true
+        default: "DM for Price"
+      - name: description
+        label: Description
+        type: string
+        required: true
+      - name: image
+        label: Product Image
+        type: image
+        required: true
