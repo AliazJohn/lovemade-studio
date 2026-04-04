@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Sneha Mathew">
+    
+    <!-- Primary Meta Tags -->
+    <title>Lovemade Studio | Custom Handmade Ceramics in Kerala by Sneha Mathew</title>
+    <meta name="title" content="Lovemade Studio | Custom Handmade Ceramics in Kerala by Sneha Mathew">
+    <meta name="description" content="Handmade with love by Sneha Mathew in Kerala, India. Shop custom ceramic bag charms, beautiful pottery utensils, aesthetic fridge magnets, and character pin badges. Shipping available.">
+    <meta name="keywords" content="handmade ceramics Kerala, custom bag charms Kerala, ceramic pin badges, pottery utensils Kerala, handmade clay art Kerala, Sneha Mathew art, Lovemade Studio Kerala, custom pottery Kerala, artistic ceramics India">
+    <meta name="geo.region" content="IN-KL">
+    <meta name="geo.placename" content="Kerala, India">
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lovemade-studio.example.com/"> <!-- Update with your actual URL once hosted -->
+    <meta property="og:title" content="Lovemade Studio | Custom Handmade Ceramics">
+    <meta property="og:description" content="Handmade with love by Sneha Mathew. Discover custom aesthetic ceramics, bag charms, pottery, and more.">
+    <meta property="og:image" content="https://lovemade-studio.example.com/assets/logo.png"> <!-- Must be absolute URL when hosted -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lovemade-studio.example.com/">
+    <meta property="twitter:title" content="Lovemade Studio | Custom Handmade Ceramics">
+    <meta property="twitter:description" content="Handmade with love by Sneha Mathew. Discover custom aesthetic ceramics.">
+    <meta property="twitter:image" content="https://lovemade-studio.example.com/assets/logo.png">
+    
+    <link rel="canonical" href="https://lovemade-studio.example.com/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Schema.org JSON-LD for rich Google Search results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ArtGallery",
+      "name": "Lovemade Studio",
+      "image": "https://lovemade-studio.example.com/assets/logo.png",
+      "description": "Handmade with love by Sneha Mathew. Custom ceramic bag charms, pottery, and art.",
+      "url": "https://lovemade-studio.example.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Kerala",
+        "addressCountry": "IN"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Sneha Mathew"
+      },
+      "sameAs": [
+        "https://www.instagram.com/_love.made.studio_/",
+        "https://www.instagram.com/_sneha.mathew_/"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Lovemade Studio Logo" class="logo">
+            <h1 class="brand-name">Lovemade Studio</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Handmade with love</h2>
+                <p class="hero-subtitle">By Sneha Mathew</p>
+                <p class="hero-desc">Explore beautiful, custom ceramics, from bag charms and pin badges to pottery utensils. Everything is custom here.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h3 class="section-title">Our Creations</h3>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be dynamically injected here by main.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Lovemade Studio. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/_love.made.studio_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h3 class="modal-title">Ready to Order?</h3>
+            <p class="modal-desc">Every piece is custom and handmade with love. To purchase or customize <strong id="modalProductName">this item</strong>, send us a quick message!</p>
+            
+            <div class="modal-actions">
+                <a href="https://www.instagram.com/direct/t/17846505708892468/" target="_blank" class="btn btn-primary" id="igLink">
+                    Order via Instagram DM
+                </a>
+                <a href="https://wa.me/?text=Hi%20Lovemade%20Studio!%20I'm%20interested%20in%20ordering." target="_blank" class="btn btn-secondary" id="waLink">
+                    Order via WhatsApp
+                </a>
+            </div>
+            <p class="modal-footer-note">Ensure you mention any specific customization requests in your message!</p>
+        </div>
+    </div>
+
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
