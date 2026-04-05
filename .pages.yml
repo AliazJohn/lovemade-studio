@@ -9,7 +9,7 @@ content:
     path: _data/products
     format: yaml
     extension: yml
-    filename: "{slug}"
+    filename: "{slug}.yml"
     fields:
       - name: title
         label: Product Name
