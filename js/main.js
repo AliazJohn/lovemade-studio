@@ -16,16 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Products are now rendered directly by Jekyll in index.html
 
     // Modal logic
-    function openModal(productTitle) {
-        modalProductName.textContent = productTitle;
+    function openModal(title, price, description, imageUrl) {
+        modalProductName.textContent = title;
+        
+        // Construct the detailed message
+        const message = `Hi Lovemade Studio! I would like to make an enquiry about a product:\\n\\n*${title}*\\n*Price:* ${price}\\n*Description:* ${description}\\n\\n*Image Reference:* ${imageUrl}\\n\\nHow can we proceed with the order?`;
+        
+        const waMessage = encodeURIComponent(message);
         
         // Update WhatsApp link based on product
-        const waMessage = encodeURIComponent(`Hi Lovemade Studio! I'm interested in ordering the custom ${productTitle}.`);
         if (WA_NUMBER) {
             waLink.href = `https://wa.me/${WA_NUMBER}?text=${waMessage}`;
             waLink.style.display = "block";
         } else {
-            // Default WhatsApp link without a number if not provided, just drops to general WhatsApp
+            // Default WhatsApp link. Once a number is provided, this will route perfectly.
             waLink.href = `https://wa.me/?text=${waMessage}`; 
         }
 
@@ -42,7 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-purchase')) {
             const title = e.target.getAttribute('data-title');
-            openModal(title);
+            const price = e.target.getAttribute('data-price');
+            const desc = e.target.getAttribute('data-description');
+            const image = e.target.getAttribute('data-image');
+            openModal(title, price, desc, image);
         }
     });
 

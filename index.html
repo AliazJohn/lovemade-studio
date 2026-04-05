@@ -91,7 +91,11 @@
                           <h3 class="product-title">{{ product.title }}</h3>
                           <p class="product-desc">{{ product.description }}</p>
                           <p class="product-price">{{ product.price }}</p>
-                          <button class="btn-purchase" data-title="{{ product.title }}">Purchase</button>
+                          <button class="btn-purchase" 
+                                  data-title="{{ product.title | escape }}"
+                                  data-price="{{ product.price | escape }}"
+                                  data-description="{{ product.description | escape }}"
+                                  data-image="https://aliazjohn.github.io/lovemade-studio/{{ product.image }}">Purchase</button>
                       </div>
                   </div>
                 {% endfor %}
@@ -114,8 +118,8 @@
             <p class="modal-desc">Every piece is custom and handmade with love. To purchase or customize <strong id="modalProductName">this item</strong>, send us a quick message!</p>
             
             <div class="modal-actions">
-                <a href="https://www.instagram.com/direct/t/17846505708892468/" target="_blank" class="btn btn-primary" id="igLink">
-                    Order via Instagram DM
+                <a href="https://www.instagram.com/_love.made.studio_/" target="_blank" class="btn btn-primary" id="igLink">
+                    Go to Instagram Profile
                 </a>
                 <a href="https://wa.me/?text=Hi%20Lovemade%20Studio!%20I'm%20interested%20in%20ordering." target="_blank" class="btn btn-secondary" id="waLink">
                     Order via WhatsApp
