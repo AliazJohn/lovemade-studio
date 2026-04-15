@@ -4,31 +4,39 @@ media:
 
 content:
   - name: products
-    label: Products
+    label: Product Categories
     type: collection
     path: _data/products
     format: yaml
     extension: yml
     filename: "{slug}.yml"
     fields:
-      - name: product_id
-        label: Product ID (e.g. LMS-005)
+      - name: category
+        label: Category Name
         type: string
         required: true
-      - name: title
-        label: Product Name
-        type: string
-        required: true
-      - name: price
-        label: Price Text
-        type: string
-        required: true
-        default: "DM for Price"
-      - name: description
-        label: Description
-        type: string
-        required: true
-      - name: image
-        label: Product Image
-        type: image
-        required: true
+      - name: items
+        label: Items
+        type: list
+        fields:
+          - name: product_id
+            label: Product ID (e.g. LMS-005)
+            type: string
+            required: true
+          - name: title
+            label: Item Name
+            type: string
+            required: true
+          - name: price
+            label: Price
+            type: string
+            required: true
+            default: "DM for Price"
+          - name: description
+            label: Description
+            type: string
+            required: true
+          - name: image
+            label: Product Image
+            type: image
+            required: true

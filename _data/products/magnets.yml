@@ -1,5 +1,7 @@
-product_id: LMS-002
-title: Fridge Magnets (Set of 5)
-price: ₹ 599
-description: Whimsical, hand-painted magnetic ceramic characters starting to fill your heart.
-image: assets/magnets.png
+category: Fridge Magnets
+items:
+  - product_id: LMS-002
+    title: Fridge Magnets (Set of 5)
+    price: "\u20B9 599"
+    description: Whimsical, hand-painted magnetic ceramic characters starting to fill your heart.
+    image: assets/magnets.png

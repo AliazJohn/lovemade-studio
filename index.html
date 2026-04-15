@@ -87,28 +87,57 @@
             </div>
             <h3 class="section-title">Our Creations</h3>
             <div class="product-grid" id="productGrid">
-                {% for item in site.data.products %}
-                  {% assign product = item[1] %}
+                {% for cat_file in site.data.products %}
+                  {% assign cat = cat_file[1] %}
                   <div class="product-card">
+                      <!-- Image Carousel -->
                       <div class="product-image-wrapper">
-                          <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image" loading="lazy">
+                          <div class="carousel-track">
+                              {% for item in cat.items %}
+                              <img src="{{ item.image }}"
+                                   alt="{{ item.title }}"
+                                   class="carousel-img{% if forloop.first %} active{% endif %}"
+                                   data-id="{{ item.product_id | escape }}"
+                                   data-title="{{ item.title | escape }}"
+                                   data-price="{{ item.price | escape }}"
+                                   data-description="{{ item.description | escape }}"
+                                   data-category="{{ cat.category | escape }}"
+                                   data-image="https://aliazjohn.github.io/lovemade-studio/{{ item.image }}"
+                                   loading="lazy">
+                              {% endfor %}
+                          </div>
+                          {% if cat.items.size > 1 %}
+                          <button class="carousel-btn carousel-prev" aria-label="Previous">&#10094;</button>
+                          <button class="carousel-btn carousel-next" aria-label="Next">&#10095;</button>
+                          <div class="carousel-dots">
+                              {% for item in cat.items %}
+                              <span class="dot{% if forloop.first %} active{% endif %}"></span>
+                              {% endfor %}
+                          </div>
+                          {% endif %}
                       </div>
+                      <!-- Details panel (updated by JS on swipe) -->
                       <div class="product-details">
-                          <h3 class="product-title">{{ product.title }}</h3>
-                          <p class="product-desc">{{ product.description }}</p>
-                          <p class="product-price">{{ product.price }}</p>
-                          <button class="btn-purchase" 
-                                  data-id="{{ product.product_id | escape }}"
-                                  data-title="{{ product.title | escape }}"
-                                  data-price="{{ product.price | escape }}"
-                                  data-description="{{ product.description | escape }}"
-                                  data-image="https://aliazjohn.github.io/lovemade-studio/{{ product.image }}">Purchase</button>
+                          <p class="product-category-label">{{ cat.category }}</p>
+                          <h3 class="product-title">{{ cat.items[0].title }}</h3>
+                          <p class="product-desc">{{ cat.items[0].description }}</p>
+                          <p class="product-price">{{ cat.items[0].price }}</p>
+                          <button class="btn-purchase"
+                                  data-id="{{ cat.items[0].product_id | escape }}"
+                                  data-title="{{ cat.items[0].title | escape }}"
+                                  data-price="{{ cat.items[0].price | escape }}"
+                                  data-description="{{ cat.items[0].description | escape }}"
+                                  data-category="{{ cat.category | escape }}"
+                                  data-image="https://aliazjohn.github.io/lovemade-studio/{{ cat.items[0].image }}">
+                              Purchase
+                          </button>
                       </div>
                   </div>
                 {% endfor %}
             </div>
         </section>
     </main>
+
 
     <footer class="footer">
         <p>&copy; <span id="year"></span> Lovemade Studio. All rights reserved.</p>
