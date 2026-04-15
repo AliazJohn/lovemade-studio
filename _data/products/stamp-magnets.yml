@@ -1,5 +1,7 @@
-product_id: LMS-005
-title: Stamp magnets
-price: ₹ 200
-description: Stamp shaped fridge magnets
-image: assets/20260405_184304.jpg
+category: Stamp Magnets
+items:
+  - product_id: LMS-005
+    title: Stamp Magnets
+    price: "₹ 200"
+    description: Stamp shaped fridge magnets, hand-painted with love.
+    image: assets/20260405_184304.jpg
