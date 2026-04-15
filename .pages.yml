@@ -4,39 +4,41 @@ media:
 
 content:
   - name: products
-    label: Product Categories
+    label: Products
     type: collection
     path: _data/products
     format: yaml
     extension: yml
     filename: "{slug}.yml"
     fields:
-      - name: category
-        label: Category Name
+      - name: product_id
+        label: Product ID (e.g. LMS-006)
         type: string
         required: true
-      - name: items
-        label: Items
-        type: list
-        fields:
-          - name: product_id
-            label: Product ID (e.g. LMS-005)
-            type: string
-            required: true
-          - name: title
-            label: Item Name
-            type: string
-            required: true
-          - name: price
-            label: Price
-            type: string
-            required: true
-            default: "DM for Price"
-          - name: description
-            label: Description
-            type: string
-            required: true
-          - name: image
-            label: Product Image
-            type: image
-            required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          - Bag Charms
+          - Fridge Magnets
+          - Pin Badges
+          - Pottery
+          - Stamp Magnets
+        required: true
+      - name: title
+        label: Item Name
+        type: string
+        required: true
+      - name: price
+        label: Price
+        type: string
+        required: true
+        default: "DM for Price"
+      - name: description
+        label: Description
+        type: string
+        required: true
+      - name: image
+        label: Product Image
+        type: image
+        required: true

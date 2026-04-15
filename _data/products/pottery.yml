@@ -1,7 +1,6 @@
+product_id: LMS-004
 category: Pottery
-items:
-  - product_id: LMS-004
-    title: Pottery Utensils
-    price: "\u20B9 1499"
-    description: Handmade small bowl with beautiful imperfections.
-    image: assets/pottery.png
+title: Pottery Utensils
+price: "₹ 1499"
+description: Handmade small bowl with beautiful imperfections.
+image: assets/pottery.png
