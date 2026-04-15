@@ -115,7 +115,42 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
+/* Custom Banner */
+.custom-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--clay-light), var(--clay-dark));
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    margin: 0 auto 3rem auto;
+    max-width: 680px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(223, 178, 173, 0.35);
+}
+
+.custom-banner p {
+    font-size: 1rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.custom-banner strong {
+    font-weight: 600;
+    color: #5c3a35;
+}
+
+.custom-banner-icon {
+    font-size: 1rem;
+    color: #5c3a35;
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
 /* Gallery Section */
+
 .gallery-section {
     padding: 4rem 2rem;
     max-width: 1200px;
