@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const waLink = document.getElementById('waLink');
 
     // Phone number placeholder for WhatsApp. The user might change this later.
-    const WA_NUMBER = ""; // Example format: "1234567890"
+    const WA_NUMBER = "918281516879";
 
     // Products are now rendered directly by Jekyll in index.html
 
     // Modal logic
-    function openModal(title, price, description, imageUrl) {
+    function openModal(productId, title, price, description, imageUrl) {
         modalProductName.textContent = title;
         
-        // Construct the detailed message
-        const message = `Hi Lovemade Studio! I would like to make an enquiry about a product:\\n\\n*${title}*\\n*Price:* ${price}\\n*Description:* ${description}\\n\\n*Image Reference:* ${imageUrl}\\n\\nHow can we proceed with the order?`;
+        // Construct the detailed message — product ID appears first so it's easy to track
+        const message = `Hi Lovemade Studio! I would like to make an enquiry about a product:\n\n*Product ID:* ${productId}\n*Product:* ${title}\n*Price:* ${price}\n*Description:* ${description}\n\n*Image Reference:* ${imageUrl}\n\nHow can we proceed with the order?`;
         
         const waMessage = encodeURIComponent(message);
         
@@ -45,11 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setup Purchase Buttons Event Delegation
     grid.addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-purchase')) {
+            const productId = e.target.getAttribute('data-id');
             const title = e.target.getAttribute('data-title');
             const price = e.target.getAttribute('data-price');
             const desc = e.target.getAttribute('data-description');
             const image = e.target.getAttribute('data-image');
-            openModal(title, price, desc, image);
+            openModal(productId, title, price, desc, image);
         }
     });
 

@@ -11,6 +11,10 @@ content:
     extension: yml
     filename: "{slug}.yml"
     fields:
+      - name: product_id
+        label: Product ID (e.g. LMS-005)
+        type: string
+        required: true
       - name: title
         label: Product Name
         type: string

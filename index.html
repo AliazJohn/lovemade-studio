@@ -92,6 +92,7 @@
                           <p class="product-desc">{{ product.description }}</p>
                           <p class="product-price">{{ product.price }}</p>
                           <button class="btn-purchase" 
+                                  data-id="{{ product.product_id | escape }}"
                                   data-title="{{ product.title | escape }}"
                                   data-price="{{ product.price | escape }}"
                                   data-description="{{ product.description | escape }}"
