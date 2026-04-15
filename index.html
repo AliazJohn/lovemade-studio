@@ -100,7 +100,7 @@
                               {% for item in group.items %}
                               <img src="{{ item.image }}"
                                    alt="{{ item.title }}"
-                                   class="carousel-img{% if forloop.first %} active{% endif %}"
+                                   class="carousel-img{% if forloop.first %} active{% endif %} lightbox-trigger"
                                    data-id="{{ item.product_id | escape }}"
                                    data-title="{{ item.title | escape }}"
                                    data-price="{{ item.price | escape }}"
@@ -150,6 +150,15 @@
             <a href="https://www.instagram.com/_love.made.studio_/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
     </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Full screen image">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-img-wrap">
+            <img id="lightboxImg" src="" alt="" class="lightbox-img">
+        </div>
+    </div>
 
     <!-- Purchase Modal -->
     <div id="purchaseModal" class="modal">

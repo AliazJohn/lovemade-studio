@@ -110,5 +110,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close on Escape key
     window.addEventListener('keydown', e => {
         if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
     });
+
+    // ── Lightbox Logic ───────────────────────────────────────────────────
+    const lightbox      = document.getElementById('lightbox');
+    const lightboxImg   = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxBack  = lightbox.querySelector('.lightbox-backdrop');
+
+    function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        // Clear src after transition so old image doesn't flash on next open
+        setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+
+    // Click on any carousel image opens the lightbox
+    grid.addEventListener('click', e => {
+        if (e.target.classList.contains('lightbox-trigger')) {
+            // Use full-res image from data-image if available, else fall back to src
+            const fullSrc = e.target.dataset.image || e.target.src;
+            openLightbox(fullSrc, e.target.alt);
+        }
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxBack.addEventListener('click', closeLightbox);
 });
