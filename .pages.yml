@@ -19,11 +19,17 @@ content:
         label: Category
         type: select
         options:
-          - Bag Charms
-          - Fridge Magnets
-          - Pin Badges
-          - Pottery
-          - Stamp Magnets
+          values:
+            - label: Bag Charms
+              value: Bag Charms
+            - label: Fridge Magnets
+              value: Fridge Magnets
+            - label: Pin Badges
+              value: Pin Badges
+            - label: Pottery
+              value: Pottery
+            - label: Stamp Magnets
+              value: Stamp Magnets
         required: true
       - name: title
         label: Item Name
